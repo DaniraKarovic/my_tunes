@@ -9,49 +9,10 @@
   </head>
 
   <body>
-    <%= yield %>
-  </body>
-</html>
-
-  <body>
     <div id="wrapper" class="toggled">
-
+        <%= render 'shared/sidebar' %>
         <!-- Sidebar -->
-        <div id="sidebar-wrapper">
-            <ul class="sidebar-nav">
-                <li class="sidebar-brand">
-                    <a href="#">
-                        My Tunes
-                    </a>
-                </li>
-                <li class="sidebar-header">
-                </li>
-                <li>
-                    <a href="#">Homepage</a>
-                </li>
-                <li>
-                    <a href="#">Trending</a>
-                </li>
-                <li class="sidebar-header">
-                User stuff
-                </li>
-                <li>
-                    <a href="#">My Profile</a>
-                </li>
-                <li>
-                    <a href="#">My Playlists</a>
-                </li>
-                <li>
-                    <a href="#">Favorite tracks</a>
-                </li>
-                <li class="sidebar-header">
-                Header stuff
-                </li>
-                <li>
-                    <a href="#">Contact us for help</a>
-                </li>
-            </ul>
-        </div>
+
         <!-- /#sidebar-wrapper -->
 
         <!-- Page Content -->
@@ -59,11 +20,6 @@
           <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a>
           <%= yield %>
         </div>
+      </div>
   </body>
 </html>
-<script>
-$("#menu-toggle").click(function(e) {
-    e.preventDefault();
-    $("#wrapper").toggleClass("toggled");
-});
-</script>
