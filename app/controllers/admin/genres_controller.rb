@@ -1,4 +1,4 @@
-class Admin::GenreController < Admin::AdminController
+class Admin::GenresController < Admin::AdminController
 	before_action :find_genre, { only: [:edit, :update, :show, :destroy] }
 
 	def index
