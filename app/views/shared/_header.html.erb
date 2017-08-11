@@ -8,10 +8,14 @@
       </div>
       <div id="page-content-wrapper">
         <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a>
-      <ul class="nav navbar-nav pull-right">
-
-        <li><%= link_to 'Login' %></li>
-        <li><%= link_to 'Register' %></li>
+        <ul class="nav navbar-nav pull-right">
+          <% if user_signed_in? %>
+            <li><%= link_to 'Edit Account', edit_user_registration_path %></li>
+            <li><%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>
+          <% else %>
+            <li><%= link_to 'Login', new_user_session_path %></li>
+            <li><%= link_to 'Register', new_user_registration_path %></li>
+          <% end %>
         </ul>
       </div>
     </div>

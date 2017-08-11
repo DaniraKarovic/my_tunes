@@ -6,7 +6,7 @@ default: &default
 development:
   <<: *default
   host: localhost
-  database: ragtime_dev
+  database: my_tunes
   username: postgres
   password: helen666
 
@@ -16,8 +16,8 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: ragtime_dev
+  database: my_tunes
 
 production:
   <<: *default
-  database: ragtime_dev
+  database: my_tunes
