@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root 'home#index'
 
   namespace :admin do
+    get '/dashboard' => 'admin#dashboard'
     resources :albums
     resources :artists
     resources :songs
