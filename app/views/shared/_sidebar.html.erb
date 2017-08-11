@@ -13,24 +13,11 @@
       </form>
       <div class="lists">
         <li class="<%= 'active' if params[:controller]=='home' && params[:action] == 'index' %>"><%= link_to 'Homepage', root_path %></li>
-        <li>
-            <a href="#">Trending</a>
-        </li>
-
-        <li>
-            <a href="#">My Profile</a>
-        </li>
-
-        <li>
-            <a href="#">My Playlists</a>
-        </li>
-        <li>
-            <a href="#">Favorite tracks</a>
-        </li>
-
-        <li>
-            <a href="#">Contact us for help</a>
-        </li>
+        <li class="<%= 'active' if params[:controller]=='home' && params[:action] == 'trending' %>"><%= link_to 'Trending', trending_path %></li>
+        <li class="<%= 'active' if params[:controller]=='home' && params[:action] == 'trending' %>"><%= link_to 'My profile', trending_path %></li>
+        <li class="<%= 'active' if params[:controller]=='home' && params[:action] == 'trending' %>"><%= link_to 'My Playlists', trending_path %></li>
+        <li class="<%= 'active' if params[:controller]=='home' && params[:action] == 'trending' %>"><%= link_to 'Favorite tracks', trending_path %></li>
+        <li class="<%= 'active' if params[:controller]=='home' && params[:action] == 'trending' %>"><%= link_to 'Contact us', trending_path %></li>
       </div>
     </ul>
 </div>
