@@ -1,3 +1,4 @@
+<% if user_signed_in? %>
 <div id="sidebar-wrapper">
   <ul class="sidebar-nav">
     <%= image_tag 'icon.jpg', :class => "brand" %>
@@ -33,3 +34,4 @@
       </div>
     </ul>
 </div>
+<% end %>

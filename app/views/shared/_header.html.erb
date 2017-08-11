@@ -2,12 +2,14 @@
   <div class="navbar navbar-default">
     <div class="container-fluid">
       <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navMain">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navMain">
           <span class="glyphicon glyphicon-chevron-left" style="color:white;"></span>
           </button>
       </div>
       <div id="page-content-wrapper">
-        <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a>
+        <% if user_signed_in? %>
+          <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a>
+        <% end %>
         <ul class="nav navbar-nav pull-right">
           <% if user_signed_in? %>
             <li><%= link_to 'Edit Account', edit_user_registration_path %></li>

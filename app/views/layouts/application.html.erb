@@ -9,8 +9,7 @@
   </head>
 
   <body>
-
-    <div id="wrapper" class="toggled">
+    <div id="wrapper" class="<%= "toggled" if user_signed_in? %>">
         <%= render 'shared/sidebar' %>
         <%= render 'shared/header' %>
 

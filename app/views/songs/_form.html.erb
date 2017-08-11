@@ -1,0 +1,15 @@
+<%= form_for @song do |form| %>
+  <%= form.label :name %>
+  <%= form.text_field :name, class: 'form-control' %>
+  <%= error_for :name, @song.errors %>
+  <br>
+  <%= form.label :duration %>
+  <%= form.text_area :duration, class: 'form-control' %>
+  <%= error_for :duration, @song.errors %>
+  <br>
+  <%= form.label :album_id %>
+  <%= form.collection_select :album_id, Album.all, :id, :name, { prompt: 'Choose album' }, class: 'form-control' %>
+  <%= error_for :album, @song.errors %>
+  <br>
+  <%= form.submit params[:action] == 'new' ? 'Save' : 'Update', class: 'btn btn-block btn-primary' %>
+<% end %>
