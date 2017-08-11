@@ -82,18 +82,21 @@
     margin: 0;
     list-style: none;
     padding-left: 0px;
+
 }
 
 .sidebar-nav li {
     text-indent: 20px;
     line-height: 40px;
 
+
 }
 
 .sidebar-nav li a {
     display: block;
     text-decoration: none;
-    color: #806133;
+    color: #8F8888;
+    border-bottom: 1px solid #fff;
 }
 
 .sidebar-nav li a:hover {
@@ -114,7 +117,8 @@
 .sidebar-header {
   padding-left: 0px;
   font-size: 30px;
-  color: #875E32;
+  color: #856538;
+
 }
 @media(min-width:768px) {
     #wrapper {
