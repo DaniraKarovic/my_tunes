@@ -1,4 +1,4 @@
-class SongsController < ApplicationController
+class Admin::SongsController < Admin::AdminController
 	before_action :find_song, { only: [:edit, :update, :show, :destroy] }
 
 	def index
@@ -11,10 +11,11 @@ class SongsController < ApplicationController
 
   def create
     @song = Song.new(song_params)
+		@song.user_id = current_user.id
 
     if @song.save
       flash[:notice] = 'Song created successfully!'
-      redirect_to songs_path
+      redirect_to admin_songs_path
     else
       render :new
     end
@@ -25,7 +26,7 @@ class SongsController < ApplicationController
 
   def update
     if @song.update(song_params)
-      redirect_to song_path
+      redirect_to admin_song
     else
       render :edit
     end
@@ -37,7 +38,7 @@ class SongsController < ApplicationController
   def destroy
     @song.destroy
     flash[:notice] = 'Song deleted successfully!!'
-    redirect_to songs_path
+    redirect_to admin_songs_path
   end
 
   private

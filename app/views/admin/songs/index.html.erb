@@ -1,7 +1,7 @@
 <div class="row">
   <div class="col-md-7">
-    <h1>Artists <%= link_to 'Create new', new_artist_path, class: 'btn btn-success' %></h1>
-    <%= count_for @artists, 'Total:' %>
+    <h1> Songs <%= link_to 'Create new', new_admin_song_path, class: 'btn btn-success' %></h1>
+    <%= count_for @songs, 'Total:' %>
     <hr>
 
     <% unless flash[:notice].blank? %>
@@ -10,16 +10,19 @@
       </div>
     <% end %>
 
-    <h3>Artist details</h3>
+    <h3>Songs details</h3>
 
     <table class="table table-hover">
       <thead>
         <tr>
           <th>Name</th>
+          <th>Duration</th>
+          <th>Album</th>
+          <th>Actions</th>
         </tr>
       </thead>
       <tbody>
-        <%= render @artists %>
+        <%= render @songs %>
       </tbody>
     </table>
   </div>

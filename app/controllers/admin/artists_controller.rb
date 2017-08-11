@@ -1,4 +1,4 @@
-class ArtistsController < ApplicationController
+class Admin::ArtistsController < Admin::AdminController
 	before_action :find_artist, { only: [:edit, :update, :show, :destroy] }
 
 	def index
@@ -15,7 +15,7 @@ class ArtistsController < ApplicationController
 
     if @artist.save
       flash[:notice] = 'Artist created successfully!'
-      redirect_to artists_path
+      redirect_to admin_artists_path
     else
       render :new
     end
@@ -26,7 +26,7 @@ class ArtistsController < ApplicationController
 
   def update
     if @artist.update(artist_params)
-      redirect_to artist_path
+      redirect_to admin_artist_path
     else
       render :edit
     end
@@ -39,7 +39,7 @@ class ArtistsController < ApplicationController
   	if @artist.user_id = current_user.id
     	@artist.destroy
    	 flash[:notice] = 'Artist deleted successfully!'
-    	redirect_to artists_path
+    	redirect_to admin_artists_path
   	else
   	flash[:notice] = 'Not authorized'
   	end

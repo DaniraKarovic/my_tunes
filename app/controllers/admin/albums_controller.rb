@@ -1,4 +1,4 @@
-class AlbumsController < ApplicationController
+class Admin::AlbumsController < Admin::AdminController
 	before_action :find_album, { only: [:edit, :update, :show, :destroy] }
 
 	def index
@@ -15,7 +15,7 @@ class AlbumsController < ApplicationController
 
     if @album.save
       flash[:notice] = 'Album created successfully!.'
-      redirect_to albums_path
+      redirect_to admin_albums_path
     else
       render :new
     end
@@ -26,7 +26,7 @@ class AlbumsController < ApplicationController
 
   def update
     if @album.update(album_params)
-      redirect_to albums_path
+      redirect_to admin_albums_path
     else
       render :edit
     end
@@ -38,7 +38,7 @@ class AlbumsController < ApplicationController
   def destroy
     @album.destroy
     flash[:notice] = 'Album deleted successfully!'
-    redirect_to albums_path
+    redirect_to admin_albums_path
   end
 
   private

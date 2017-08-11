@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
   devise_for :users
   root 'home#index'
-  resources :albums
-  resources :artists
-  resources :songs
+
+  namespace :admin do
+    resources :albums
+    resources :artists
+    resources :songs
+  end
+
 end
