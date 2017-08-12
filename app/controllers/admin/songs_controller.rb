@@ -26,7 +26,7 @@ class Admin::SongsController < Admin::AdminController
 
   def update
     if @song.update(song_params)
-      redirect_to admin_song
+      redirect_to admin_song_path
     else
       render :edit
     end

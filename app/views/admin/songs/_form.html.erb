@@ -11,5 +11,9 @@
   <%= form.collection_select :album_id, Album.all, :id, :name, { prompt: 'Choose album' }, class: 'form-control' %>
   <%= error_for :album, @song.errors %>
   <br>
+  <%= form.label :genre_id %>
+  <%= form.collection_select :genre_id, Genre.all, :id, :name, { prompt: 'Choose genre' }, class: 'form-control' %>
+  <%= error_for :genre, @song.errors %>
+  <br>
   <%= form.submit params[:action] == 'new' ? 'Save' : 'Update', class: 'btn btn-block btn-primary' %>
 <% end %>
