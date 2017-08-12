@@ -12,6 +12,7 @@ class User < ApplicationRecord
   has_many :albums
   has_many :artists
   has_many :genres
+  has_many :Favorites
 
 
   def admin?
