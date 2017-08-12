@@ -11,14 +11,24 @@
           </div>
         </div>
       </form>
-      <div class="lists">
-        <li class="<%= 'active' if params[:controller]=='home' && params[:action] == 'index' %>"><%= link_to 'Homepage', root_path %></li>
-        <li class="<%= 'active' if params[:controller]=='home' && params[:action] == 'trending' %>"><%= link_to 'Trending', trending_path %></li>
-        <li class="<%= 'active' if params[:controller]=='home' && params[:action] == 'trending' %>"><%= link_to 'My profile', trending_path %></li>
-        <li class="<%= 'active' if params[:controller]=='home' && params[:action] == 'trending' %>"><%= link_to 'My Playlists', trending_path %></li>
-        <li class="<%= 'active' if params[:controller]=='home' && params[:action] == 'trending' %>"><%= link_to 'Favorite tracks', trending_path %></li>
-        <li class="<%= 'active' if params[:controller]=='home' && params[:action] == 'trending' %>"><%= link_to 'Contact us', trending_path %></li>
-      </div>
+      <% if current_user.admin? || current_user.superadmin? %>
+        <div class="lists">
+          <li class="<%= 'active' if params[:controller]=='home' && params[:action] == 'index' %>"><%= link_to 'Homepage', root_path %></li>
+          <li class="<%= 'active' if params[:controller]=='songs' && params[:action] == 'index' %>"><%= link_to 'Songs', admin_songs_path %></li>
+          <li class="<%= 'active' if params[:controller]=='albums' && params[:action] == 'index' %>"><%= link_to 'Albums', admin_albums_path %></li>
+          <li class="<%= 'active' if params[:controller]=='artists' && params[:action] == 'index' %>"><%= link_to 'Artists', admin_artists_path %></li>
+          <li class="<%= 'active' if params[:controller]=='genres' && params[:action] == 'index' %>"><%= link_to 'Genres', admin_genres_path %></li>
+        </div>
+      <% else %>
+        <div class="lists">
+          <li class="<%= 'active' if params[:controller]=='home' && params[:action] == 'index' %>"><%= link_to 'Homepage', root_path %></li>
+          <li class="<%= 'active' if params[:controller]=='home' && params[:action] == 'trending' %>"><%= link_to 'Trending', trending_path %></li>
+          <li class="<%= 'active' if params[:controller]=='home' && params[:action] == 'trending' %>"><%= link_to 'My profile', trending_path %></li>
+          <li class="<%= 'active' if params[:controller]=='home' && params[:action] == 'trending' %>"><%= link_to 'My Playlists', trending_path %></li>
+          <li class="<%= 'active' if params[:controller]=='home' && params[:action] == 'trending' %>"><%= link_to 'Favorite tracks', trending_path %></li>
+          <li class="<%= 'active' if params[:controller]=='home' && params[:action] == 'trending' %>"><%= link_to 'Contact us', trending_path %></li>
+        </div>
+      <% end %>
     </ul>
 </div>
 <% end %>

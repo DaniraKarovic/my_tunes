@@ -1,6 +1,7 @@
 <tr>
   <td><%= link_to album.name, admin_album_path(album) %></td>
   <td><%= album.year %></td>
+  <td><%= album.artist.name %></td>
   <td>
   <div class="btn-group">
     <% if current_user.superadmin? || current_user.id == album.user_id %>
