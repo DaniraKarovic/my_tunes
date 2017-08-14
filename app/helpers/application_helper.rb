@@ -20,11 +20,4 @@ module ApplicationHelper
     attribute.to_s.capitalize.split('_').join(' ')
   end
 
-  def count_for(model, message = 'Count')
-    content_tag :h2, "#{message} #{model.count}"
-  end
-
-  def count_songs_for(model)
-  	model.products.count
-  end
 end

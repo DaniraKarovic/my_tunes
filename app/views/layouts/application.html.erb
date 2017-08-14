@@ -10,11 +10,10 @@
 
   <body>
     <div id="wrapper" class="<%= "toggled" if user_signed_in? %>">
-        <%= render 'shared/sidebar' %>
-        <%= render 'shared/header' %>
+      <%= render 'shared/sidebar' %>
+      <%= render 'shared/header' %>
 
-          <%= yield %>
-        </div>
-      </div>
+      <%= yield %>
+    </div>
   </body>
 </html>

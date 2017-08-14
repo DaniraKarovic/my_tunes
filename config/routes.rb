@@ -11,4 +11,7 @@ Rails.application.routes.draw do
     resources :genres
   end
 
+  namespace :tuner do
+    resources :favorites, only: [:index, :create, :destroy]
+  end
 end

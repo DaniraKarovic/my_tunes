@@ -5,6 +5,5 @@ class HomeController < ApplicationController
   end
 
   def trending
-
   end
 end

@@ -16,7 +16,8 @@
   // width:20%
 }
 
-/*Search bar ends here*/
+/*Search bar ends here************************************************************/
+
 
 .brand {
   width: 200px;
@@ -73,7 +74,7 @@
     margin-right: -250px;
 }
 
-/* Sidebar Styles */
+/* Sidebar Styles *****************************************************************************/
 
 .sidebar-nav {
     position: absolute;
@@ -82,14 +83,11 @@
     margin: 0;
     list-style: none;
     padding-left: 0px;
-
 }
 
 .sidebar-nav li {
     text-indent: 20px;
     line-height: 40px;
-
-
 }
 
 .sidebar-nav li a {
@@ -118,8 +116,8 @@
   padding-left: 0px;
   font-size: 30px;
   color: #856538;
-
 }
+
 @media(min-width:768px) {
     #wrapper {
         padding-left: 0;

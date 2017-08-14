@@ -7,14 +7,10 @@ class Tuner::FavoritesController < Tuner::TunerController
   end
 
   def create
-
-
   end
 
 
   def destroy
-
-
   end
 
 
