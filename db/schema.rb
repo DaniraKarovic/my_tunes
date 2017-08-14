@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170812121630) do
+ActiveRecord::Schema.define(version: 20170814121551) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -52,6 +52,19 @@ ActiveRecord::Schema.define(version: 20170812121630) do
     t.index ["user_id"], name: "index_genres_on_user_id", using: :btree
   end
 
+  create_table "playlist_songs", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "playlists", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "user_id"
+    t.string   "name"
+    t.index ["user_id"], name: "index_playlists_on_user_id", using: :btree
+  end
+
   create_table "songs", force: :cascade do |t|
     t.string   "name"
     t.string   "duration"
@@ -89,6 +102,7 @@ ActiveRecord::Schema.define(version: 20170812121630) do
   add_foreign_key "favorites", "songs"
   add_foreign_key "favorites", "users"
   add_foreign_key "genres", "users"
+  add_foreign_key "playlists", "users"
   add_foreign_key "songs", "albums"
   add_foreign_key "songs", "genres"
   add_foreign_key "songs", "users"

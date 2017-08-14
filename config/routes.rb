@@ -13,5 +13,7 @@ Rails.application.routes.draw do
 
   namespace :tuner do
     resources :favorites, only: [:index, :create, :destroy]
+    resources :playlists
+    resources :playlist_songs, only: [:create, :destroy]
   end
 end
