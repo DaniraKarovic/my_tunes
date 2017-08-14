@@ -1,24 +1,27 @@
-<div class="row">
-  <div class="col-md-7">
-    <h1>Playlists <%= link_to 'Create new', new_tuner_playlist_path, class: 'btn btn-success' %></h1>
+<div class="container">
+  <div class="row">
+    <div class="col-md-7">
+      <h1>Playlists <%= link_to 'Create new', new_tuner_playlist_path, class: 'btn btn-success' %></h1>
 
-    <% unless flash[:notice].blank? %>
-      <div class="alert alert-success">
-        <p><%= flash[:notice] %></p>
-      </div>
-    <% end %>
+      <% unless flash[:notice].blank? %>
+        <div class="alert alert-success">
+          <p><%= flash[:notice] %></p>
+        </div>
+      <% end %>
 
-    <h3>Playlist details</h3>
+      <h3>Playlist details</h3>
 
-    <table class="table table-bordered">
-      <thead>
-        <tr>
-          <th>Name</th>
-        </tr>
-      </thead>
-      <tbody>
-        <%= render @playlists %>
-      </tbody>
-    </table>
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <%= render @playlists %>
+        </tbody>
+      </table>
+    </div>
   </div>
 </div>

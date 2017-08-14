@@ -15,7 +15,7 @@ class Tuner::PlaylistsController < Tuner::TunerController
 
     if @playlist.save
       flash[:notice] = 'Playlist created successfully.'
-      redirect_to playlists_path
+      redirect_to tuner_playlists_path
     else
       render :new
     end
@@ -26,7 +26,7 @@ class Tuner::PlaylistsController < Tuner::TunerController
 
   def update
     if @playlist.update(playlist_params)
-      redirect_to playlist_path
+      redirect_to tuner_playlist_path
     else
       render :edit
     end
@@ -38,7 +38,7 @@ class Tuner::PlaylistsController < Tuner::TunerController
   def destroy
     @playlist.destroy
     flash[:notice] = 'Playlist deleted successfully!'
-    redirect_to playlists_path
+    redirect_to tuner_playlists_path
   end
 
   private
