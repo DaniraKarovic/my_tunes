@@ -4,6 +4,10 @@ class HomeController < ApplicationController
   def index
   end
 
-  def trending
+  def songs
+  end
+
+  def contact
+
   end
 end

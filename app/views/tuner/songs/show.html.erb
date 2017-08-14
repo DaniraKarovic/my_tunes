@@ -1,0 +1,19 @@
+<div class="row">
+  <div class="col-md-6">
+    <p><strong>Name:</strong></p>
+    <p><%= @song.name %></p>
+    <br>
+    <p><strong>Artist:</strong></p>
+    <p><%= @song.album.artist.name %></p>
+    <br>
+    <p><strong>Album:</strong></p>
+    <p><%= @song.album.name %></p>
+    <br>
+    <p><strong>Duration:</strong></p>
+    <p><%= @song.duration %></p>
+    <br>
+    <p><strong>Genre:</strong></p>
+    <p><%= @song.genre.name %></p>
+    <br>
+  </div>
+</div>
