@@ -2,7 +2,11 @@ class Tuner::SongsController < Tuner::TunerController
 	before_action :find_song, { only: [:show] }
 
 	def index
-  	@songs = Song.all
+		if params[:search].nil?
+			@songs = Song.all
+		else
+  		@songs = Song.where("name like ?", "%"+params[:search]+"%")
+		end
 	end
 
   def show
