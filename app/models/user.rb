@@ -12,7 +12,8 @@ class User < ApplicationRecord
   has_many :albums
   has_many :artists
   has_many :genres
-  has_many :Favorites
+  has_many :favorites
+  has_many :playlists, dependent: :destroy
 
 
   def admin?

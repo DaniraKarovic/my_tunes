@@ -17,4 +17,14 @@
       <% end %>
     </div>
   </td>
+  <td>
+    <%= link_to song.youtubelink, class: '', target: "_blank" do %>
+      <i class="fa fa-youtube-play" aria-hidden="true"></i>
+    <% end %>
+  </td>
+  <td>
+    <%= link_to tuner_playlist_songs_path(song_id: song.id, playlist_id: current_user.playlists.first.id), method: :post do %>
+      <i class="fa fa-list-ul" aria-hidden="true"></i>
+    <% end %>
+  </td>
 </tr>

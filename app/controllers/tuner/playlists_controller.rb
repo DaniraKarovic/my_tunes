@@ -33,6 +33,7 @@ class Tuner::PlaylistsController < Tuner::TunerController
   end
 
   def show
+		@playlistsongs = @playlist.playlist_songs
   end
 
   def destroy

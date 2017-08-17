@@ -44,7 +44,7 @@ class Admin::SongsController < Admin::AdminController
   private
 
   def song_params
-    params.require(:song).permit(:name, :duration, :album_id, :genre_id);
+    params.require(:song).permit(:name, :duration, :album_id, :genre_id, :youtubelink);
   end
 
   def find_song

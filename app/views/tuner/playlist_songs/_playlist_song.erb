@@ -1,0 +1,10 @@
+<tr>
+  <td><%= playlist_song.song.name %></td>
+  <td><%= playlist_song.song.album.artist.name %></td>
+  <td><%= playlist_song.song.album.name %></td>
+  <td><%= playlist_song.song.duration %></td>
+  <td><%= playlist_song.song.genre.name %></td>
+  <td>
+    <%= link_to 'Delete', tuner_playlist_song_path(playlist_song), method: :delete, data: {confirm: "Are you sure?"}, class: 'btn btn-sm btn-danger' %>
+  </td>
+</tr>

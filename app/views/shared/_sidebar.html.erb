@@ -15,14 +15,6 @@
           </div>
         </div>
       <% end %>
-      <!-- <form class="navbar-form" role="search">
-        <div class="input-group add-on">
-          <input class="form-control" placeholder="Search" name="srch-term" id="srch-term" type="text">
-          <div class="input-group-btn">
-            <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
-          </div>
-        </div>
-      </form> -->
       <% if current_user.admin? || current_user.superadmin? %>
         <div class="lists">
           <li class="<%= 'active' if params[:controller]=='home' && params[:action] == 'index' %>"><%= link_to 'Homepage', root_path %></li>
@@ -35,7 +27,7 @@
         <div class="lists">
           <li class="<%= 'active' if params[:controller]=='home' && params[:action] == 'index' %>"><%= link_to 'Homepage', root_path %></li>
           <li class="<%= 'active' if params[:controller]=='home' && params[:action] == 'index' %>"><%= link_to 'Songs', tuner_songs_path %></li>
-          <li class="<%= 'active' if params[:controller]=='home' && params[:action] == 'index' %>"><%= link_to 'My profile', tuner_songs_path %></li>
+          <li class="<%= 'active' if params[:controller]=='home' && params[:action] == 'index' %>"><%= link_to 'My profile', root_path %></li>
           <li class="<%= 'active' if params[:controller]=='home' && params[:action] == 'index' %>"><%= link_to 'My Playlists', tuner_playlists_path %></li>
           <li class="<%= 'active' if params[:controller]=='home' && params[:action] == 'index' %>"><%= link_to 'Favorite tracks', tuner_favorites_path %></li>
           <li class="<%= 'active' if params[:controller]=='home' && params[:action] == 'contact' %>"><%= link_to 'Contact us', contact_path %></li>

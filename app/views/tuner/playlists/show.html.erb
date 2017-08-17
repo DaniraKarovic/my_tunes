@@ -1,7 +1,23 @@
 <div class="row">
   <div class="col-md-6">
-    <p><strong>Name:</strong></p>
+    <p><strong>Name of the playlist:</strong></p>
     <p><%= @playlist.name %></p>
     <br>
+    <p><strong>Songs</strong></p>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Song</th>
+          <th>Artist</th>
+          <th>Album</th>
+          <th>Duration</th>
+          <th>Genre</th>
+          <th>Remove from playlist</th>
+        </tr>
+      </thead>
+      <tbody>
+        <%= render @playlistsongs %>
+      </tbody>
+    </table>
   </div>
 </div>

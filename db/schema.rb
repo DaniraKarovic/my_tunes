@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170814121551) do
+ActiveRecord::Schema.define(version: 20170817162636) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -53,8 +53,12 @@ ActiveRecord::Schema.define(version: 20170814121551) do
   end
 
   create_table "playlist_songs", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.integer  "playlist_id"
+    t.integer  "song_id"
+    t.index ["playlist_id"], name: "index_playlist_songs_on_playlist_id", using: :btree
+    t.index ["song_id"], name: "index_playlist_songs_on_song_id", using: :btree
   end
 
   create_table "playlists", force: :cascade do |t|
@@ -68,11 +72,12 @@ ActiveRecord::Schema.define(version: 20170814121551) do
   create_table "songs", force: :cascade do |t|
     t.string   "name"
     t.string   "duration"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
     t.integer  "album_id"
     t.integer  "user_id"
     t.integer  "genre_id"
+    t.string   "youtubelink"
     t.index ["album_id"], name: "index_songs_on_album_id", using: :btree
     t.index ["genre_id"], name: "index_songs_on_genre_id", using: :btree
     t.index ["user_id"], name: "index_songs_on_user_id", using: :btree
@@ -102,6 +107,8 @@ ActiveRecord::Schema.define(version: 20170814121551) do
   add_foreign_key "favorites", "songs"
   add_foreign_key "favorites", "users"
   add_foreign_key "genres", "users"
+  add_foreign_key "playlist_songs", "playlists"
+  add_foreign_key "playlist_songs", "songs"
   add_foreign_key "playlists", "users"
   add_foreign_key "songs", "albums"
   add_foreign_key "songs", "genres"
