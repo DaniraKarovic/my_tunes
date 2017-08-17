@@ -4,5 +4,17 @@
   <td><%= song.album.name %></td>
   <td><%= song.duration %></td>
   <td><%= song.genre.name %></td>
-  <td><%= link_to 'Favorite', tuner_favorites_path(song_id: song.id), method: :post %></td>
+  <td>
+    <div class="btn-group">
+      <% if Favorite.where(song_id: song.id, user_id: current_user.id).empty? %>
+        <%= link_to tuner_favorites_path(song_id: song.id), method: :post, class: '' do %>
+          <i class="fa fa-heart-o" aria-hidden="true"></i>
+        <% end %>
+      <% else %>
+        <%= link_to tuner_favorite_path(song.id), method: :delete, class: '' do %>
+          <i class="fa fa-heart" aria-hidden="true"></i>
+        <% end %>
+      <% end %>
+    </div>
+  </td>
 </tr>
