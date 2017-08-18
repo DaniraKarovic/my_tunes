@@ -27,7 +27,7 @@
         <div class="lists">
           <li class="<%= 'active' if params[:controller]=='home' && params[:action] == 'index' %>"><%= link_to 'Homepage', root_path %></li>
           <li class="<%= 'active' if params[:controller]=='home' && params[:action] == 'index' %>"><%= link_to 'Songs', tuner_songs_path %></li>
-          <li class="<%= 'active' if params[:controller]=='home' && params[:action] == 'index' %>"><%= link_to 'My profile', root_path %></li>
+          <li class="<%= 'active' if params[:controller]=='tuner_index' && params[:action] == 'index' %>"><%= link_to 'My profile', tuner_index_path %></li>
           <li class="<%= 'active' if params[:controller]=='home' && params[:action] == 'index' %>"><%= link_to 'My Playlists', tuner_playlists_path %></li>
           <li class="<%= 'active' if params[:controller]=='home' && params[:action] == 'index' %>"><%= link_to 'Favorite tracks', tuner_favorites_path %></li>
           <li class="<%= 'active' if params[:controller]=='home' && params[:action] == 'contact' %>"><%= link_to 'Contact us', contact_path %></li>
